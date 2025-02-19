@@ -1,6 +1,6 @@
 const moongose = require('mongoose')
 
-const product = moongose.Schema(
+const productSchema = moongose.Schema(
     {
 
         name: {
@@ -8,18 +8,32 @@ const product = moongose.Schema(
             required: [true, 'please enter product name']
         },
 
-        price:{
-            type:Number,
-            required:true,
-            default:0
+        price: {
+            type: Number,
+            required: true,
+            default: 0
         },
 
-        quantity:{
-            type:Number,
-            default:0,
-            required:true
+        quantity: {
+            type: Number,
+            required: true,
+            default: 0,
+        },
+
+        Image: {
+            type: String,
+            require: true
         }
 
+    },
+
+    {
+        timestamps: true,
     }
 
-)
+);
+
+const product=moongose.model('product',productSchema)
+
+
+moduel.exports={product}
