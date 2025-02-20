@@ -29,6 +29,7 @@ const productSchema = moongose.Schema(
 
     {
         timestamps: true,
+        versionKey: false
     }
 
 );
@@ -36,4 +37,4 @@ const productSchema = moongose.Schema(
 const product=moongose.model('product',productSchema)
 
 
-moduel.exports={product}
+module.exports=product
