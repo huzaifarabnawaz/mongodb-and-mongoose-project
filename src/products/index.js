@@ -1,11 +1,12 @@
 const express=require('express')
-const routes=express.Router()
-const{productApi,getAllProduct,getById, updateById}=require('./products')
-
-routes.post('/create',productApi)
-routes.get('/getallproducts',getAllProduct)
-routes.get('/:id',getById)
-routes.patch('/:id',updateById)
+const router=express.Router()
+const{productApi,getAllProduct,getById, updateById,deleteProduct}=require('./products')
 
 
-module.exports=routes 
+router.post('/create',productApi)
+router.get('/getallproducts',getAllProduct)
+router.get('/:id',getById)
+router.put('/:id',updateById)
+router.delete('deleteproduct/:id',deleteProduct)
+
+module.exports=router 
