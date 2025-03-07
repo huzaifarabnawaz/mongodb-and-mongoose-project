@@ -4,9 +4,9 @@ require('dotenv').config();
 const connectDb = async () => {
     try {
        const connection= await mongoose.connect(process.env.CONNECTIONKEY,)
-        console.log('Connection successful');
+        console.log('ongoDB Connected ✅');
     } catch (err) {
-        console.error('Connection failed:', err);
+        console.error('Connection failed ❌:', err);
     }
 };
 
